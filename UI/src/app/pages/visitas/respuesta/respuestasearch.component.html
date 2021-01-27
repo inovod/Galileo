@@ -1,0 +1,113 @@
+<h3> <i class="fas fa-fw  fa-file-signature fa-2x"></i><small> Respuestas</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Filtros Respuestas</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="search()">
+                <div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div>
+                                <input formControlName="cadenaFiltro" type="text" class="form-control" id="customImput1">
+                            </div>
+                            <div class="text-info animated fadeIn">Buscar cadena</div>
+                        </div>
+                        <div class="col">
+                            <!--<div class="input-group"> -->
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('tipoRespuesta').valid }">
+                                <ng-select [multiple]="false" style="color: black;" formControlName="tipoRespuesta" [allowClear]="true " [options]="filterRespuestas.tipoRespuesta " placeholder="Seleccionar tipo respuesta">
+                                </ng-select>
+                            </div>
+                            <!-- </div> -->
+                            <div *ngIf="forma.get('tipoRespuesta').errors?.required" class="text-danger animated fadeIn ">Seleccionar tipo respuesta</div>
+                        </div>
+
+                        <div class="col">
+                            <div class="custom-control custom-checkbox">
+                                <input formControlName="surtido" type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" style="color: black;" for="customCheck1">Surtido</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-right">
+                    <button type="submit" [disabled]="!this.forma.valid" class="btn btn-info mx-2" title="Search">
+                                        <i class="fas fa-search fa-x1"></i> Buscar
+                                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="col">
+    <div class="form-group form-inline">
+        <span class="ml-3" *ngIf="this.loading">Cargando resultados ......</span>
+    </div>
+    <div>
+        <table class="table table-striped mt-3 animated fadeIn faster">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" sortable="cdReferencia" (sort)="onSort($event)">Cd.Referencia</th>
+                    <th scope="col" sortable="referencia" (sort)="onSort($event)">Referencia</th>
+                    <th scope="col" sortable="cdPreguntaCuestionario" (sort)="onSort($event)">Cd.Pregunta Cuestionario</th>
+                    <th scope="col" sortable="cdCuestionario" (sort)="onSort($event)">Cd.Cuestionario</th>
+                    <th scope="col" sortable="cdPregunta" (sort)="onSort($event)">Cd.Pregunta</th>
+                    <th scope="col" sortable="pregunta" (sort)="onSort($event)">Pregunta</th>
+                    <th scope="col" sortable="respuesta" (sort)="onSort($event)">Respuesta</th>
+                    <th scope="col" sortable="surtido" (sort)="onSort($event)">Surtido</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of respuestas$ | async ; let i = index">
+                    <td>
+                        <ngb-highlight [result]="item.cdReferencia" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.referencia" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.cdPreguntaCuestionario" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.cdCuestionario" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.cdPregunta" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.pregunta" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.respuesta" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.surtido" [term]="respuestaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <button class="btn btn-info mr-1" (click)="editRespuestas(item)">
+                            <i class="fa fa-pen"></i>
+                        </button>
+                        <button class="btn btn-danger" (click)="borrarRespuesta(item)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="total$ | async" [(page)]="respuestaListadoServ.page" [pageSize]="respuestaListadoServ.pageSize">
+            </ngb-pagination>
+
+
+            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="respuestaListadoServ.pageSize">
+                              <option [ngValue]="10" selected>10</option>
+                              <option [ngValue]="50">50</option>
+                              <option [ngValue]="100">100</option>
+                            </select>
+        </div>
+    </div>
+</div>

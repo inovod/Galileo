@@ -1,0 +1,74 @@
+<h3> <i class="fas fa-fw fas fa-gas-pump fa-2x"></i><small> Duplicar Surtido</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Selecciones el destino del surtido</div>
+        <div class="card-body" style="background-color: white;">
+            <form (ngSubmit)="guardar(forma)" #forma="ngForm">
+                <div>
+                    <div class="form-row mb-4">
+
+                        <div class="col">
+                            <label for="InputCanal">Canal</label>
+                            <div [ngClass]="{'has-danger-ngselect': vcanal.errors?.required }">
+                                <ng-select style="color: black;" required [multiple]="false" [(ngModel)]="itemSelectCanal" name="Canal" (selected)="selectCanal($event)" (deselected)="deleteCanal($event)" placeholder="Seleccionar  Canal" [allowClear]="true" [options]="canalesModel">
+                                </ng-select>
+                            </div>
+                            <input class="form-control" type="hidden" name="validarCanal" required [(ngModel)]="validarCanal" #vcanal="ngModel">
+                            <div *ngIf="vcanal.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                        </div>
+                        <div class="col">
+                            <label for="InputCanal">Cadenas</label>
+                            <div [ngClass]="{'has-danger-ngselect': vcadena.errors?.required }">
+                                <ng-select style="color: black;" [multiple]="true" [(ngModel)]="itemSelectCadenas" name="Cadenas" (selected)="selectCadena($event)" (deselected)="deleteCadena($event)" placeholder="Seleccionar  Cadena" [allowClear]="true" [options]="cadenasModel">
+                                </ng-select>
+                            </div>
+                            <input class="form-control" type="hidden" name="validarCadena" required [(ngModel)]="validarCadena" #vcadena="ngModel">
+                            <div *ngIf="vcadena.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                        </div>
+                        <div class="col">
+                            <label for="InputCanal">Enseñas</label>
+                            <div [ngClass]="{'has-danger-ngselect': vensena.errors?.required }">
+                                <ng-select style="color: black;" [multiple]="true" name="Ensena" [(ngModel)]="itemSelectEnsena" (selected)="selectEnsena($event)" (deselected)="deleteEnsena($event)" placeholder="Seleccionar  Ensena" [allowClear]="true" [options]="ensenaModel">
+                                </ng-select>
+                            </div>
+                            <input class="form-control" type="hidden" name="validarEnsena" required [(ngModel)]="validarEnsena" #vensena="ngModel">
+                            <div *ngIf="vensena.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-right">
+                        <button type="submit" [disabled]="!this.forma.valid" class="btn btn-primary">Duplicar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <table class="table table-striped mt-3 animated fadeIn faster">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Cadena</th>
+                <th scope="col">Enseña</th>
+                <th scope="col">Fecha Alta</th>
+                <th scope="col">Fecha Baja</th>
+                <th scope="col">N.Referencia</th>
+                <th scope="col">Publicado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{surtidoRequest.cliente}}</td>
+                <td>{{surtidoRequest.cadena}}</td>
+                <td>{{surtidoRequest.ensena}}</td>
+                <td>{{surtidoRequest.fechaAlta}}</td>
+                <td>{{surtidoRequest.fechaBaja}}</td>
+                <td>{{surtidoRequest.numeroReferencias}}</td>
+                <td>{{surtidoRequest.publicado}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

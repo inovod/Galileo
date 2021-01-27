@@ -1,0 +1,114 @@
+<h3> <i class="fas fa-fw fa-store fa-2x"></i><small> Cluster</small></h3>
+<hr>
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(forma)" #forma="ngForm">
+            <div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <label for="InputCanal">Canal</label>
+                        <div [ngClass]="{'has-danger-ngselect': vcanal.errors?.required }">
+                            <ng-select required [multiple]="false" [(ngModel)]="itemSelectCanal" name="Canal" (selected)="canalSelect($event)" (deselected)="canalDelete($event)" placeholder="Seleccionar  Canal" [allowClear]="true" [options]="canalesModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarCanal" required [(ngModel)]="validarCanal" #vcanal="ngModel">
+                        <div *ngIf="vcanal.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="InputCanal">Cadenas</label>
+                        <div [ngClass]="{'has-danger-ngselect': vcadena.errors?.required }">
+                            <ng-select [multiple]="false" [(ngModel)]="itemSelectCadenas" name="Cadenas" (selected)="cadenaSelect($event)" (deselected)="cadenaDelete($event)" placeholder="Seleccionar  Cadena" [allowClear]="true" [options]="cadenasModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarCadena" required [(ngModel)]="validarCadena" #vcadena="ngModel">
+                        <div *ngIf="vcadena.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="InputCanal">Enseñas</label>
+                        <div [ngClass]="{'has-danger-ngselect': vensena.errors?.required }">
+                            <ng-select [multiple]="true" name="Ensena" [(ngModel)]="itemSelectEnsena" (selected)="ensenaSelect($event)" (deselected)="ensenaDelete($event)" placeholder="Seleccionar  Ensena" [allowClear]="true" [options]="ensenaModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarEnsena" required [(ngModel)]="validarEnsena" #vensena="ngModel">
+                        <div *ngIf="vensena.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <label for="InputSector">Sector</label>
+                        <div [ngClass]="{'has-danger-ngselect': vsector.errors?.required }">
+                            <ng-select [multiple]="true" name="Sector" [(ngModel)]="itemSelectSector" (selected)="sectorSelect($event)" (deselected)="sectorDelete($event)" placeholder="Seleccionar  Sector" [allowClear]="true" [options]="sectorModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarSector" required [(ngModel)]="validarSector" #vsector="ngModel">
+                        <div *ngIf="vsector.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="InputFamilia">Familia</label>
+                        <div [ngClass]="{'has-danger-ngselect': vfamilia.errors?.required }">
+                            <ng-select [multiple]="true" name="Familia" (deselected)="familiaDelete($event)" (selected)="familiaSelect($event)" [(ngModel)]="itemSelectFamilia" placeholder="Seleccionar  Familia" [allowClear]="true" [options]="familiaModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarFamilia" required [(ngModel)]="validarFamilia" #vfamilia="ngModel">
+                        <div *ngIf="vfamilia.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="InputCategoria">Categoría</label>
+                        <div [ngClass]="{'has-danger-ngselect': vcategoria.errors?.required }">
+                            <ng-select [multiple]="true" name="Categoria" (deselected)="categoriaDelete($event)" (selected)="categoriaSelect($event)" [(ngModel)]="itemSelectCategoria" placeholder="Seleccionar  Categoría" [allowClear]="true" [options]="categoriasModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarCategoria" required [(ngModel)]="validarCategoria" #vcategoria="ngModel">
+                        <div *ngIf="vcategoria.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="InputSegmento">Segmento</label>
+                        <div [ngClass]="{'has-danger-ngselect': vcategoria.errors?.required }">
+                            <ng-select [multiple]="true" name="Segmento" (deselected)="segmentoDelete($event)" (selected)="segmentoSelect($event)" [(ngModel)]="itemSelectSegmento" placeholder="Seleccionar  Segmento" [allowClear]="true" [options]="segmentoModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarSegmento" required [(ngModel)]="validarSegmento" #vsegmento="ngModel">
+                        <div *ngIf="vsegmento.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <label for="InputProvincia">Provincia</label>
+                        <div [ngClass]="{'has-danger-ngselect': vprovincia.errors?.required }">
+                            <ng-select [multiple]="true" name="Provincia" [options]="provinciaModel" [(ngModel)]="itemSelectProvincia" (selected)="provinciaSelect($event)" (deselected)="provinciaDelete($event)" placeholder="Seleccionar  Provincia" [allowClear]="true">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarProvincia" required [(ngModel)]="validarProvincia" #vprovincia="ngModel">
+                        <div *ngIf="vprovincia.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                    <div class="col">
+                        <label for="Inputmunicipio">municipio</label>
+                        <div [ngClass]="{'has-danger-ngselect': vmunicipio.errors?.required }">
+                            <ng-select [allowClear]="true" [options]="municipioModel" [multiple]="true" name="municipio" (selected)="municipioSelect($event)" (deselected)="municipioDelete($event)" placeholder="Seleccionar  Municipio" [(ngModel)]="itemSelectMunicipio"></ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarMunicipio" required [(ngModel)]="validarMunicipio" #vmunicipio="ngModel">
+                        <div *ngIf="vmunicipio.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <label for="InputCanal">Cluster</label>
+                        <div [ngClass]="{'has-danger-ngselect': vcluster.errors?.required }">
+                            <ng-select [multiple]="true" [(ngModel)]="itemSelectCluster" name="Cluster" (selected)="clusterSelect($event)" (deselected)="clusterDelete($event)" placeholder="Seleccionar  Cluster" [allowClear]="true" [options]="clusterModel">
+                            </ng-select>
+                        </div>
+                        <input class="form-control" type="hidden" name="validarCluster" required [(ngModel)]="validarCluster" #vcluster="ngModel">
+                        <div *ngIf="vcluster.errors?.required" class="text-danger animated fadeIn">Campo requerido</div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-right">
+                    <button [disabled]="!forma.valid" class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

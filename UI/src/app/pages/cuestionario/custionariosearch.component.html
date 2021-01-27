@@ -1,0 +1,126 @@
+<h3> <i class="far far-fw fa-question-circle fa-2x"></i><small> Cuestionario</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Filtros Cuestionario</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="search()">
+                <div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fDesde').valid }">
+                                    <input class="form-control" formControlName="fDesde" placeholder="dd-mm-yyyy" ngbDatepicker #fd="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fd.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div *ngIf="forma.get('fDesde').errors?.required" class="text-danger animated fadeIn">Seleccionar fecha desde</div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fhasta').valid }">
+                                    <input class="form-control" formControlName="fhasta" placeholder="dd-mm-yyyy" ngbDatepicker #fh="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fh.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div *ngIf="forma.get('fhasta').errors?.required" class="text-danger animated fadeIn">Seleccionar fecha hasta</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('clientes').valid }">
+                                <ng-select style="color: black;" formControlName="clientes" [allowClear]="true " [options]="filter.clientes " placeholder="Seleccionar un cliente ">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get( 'clientes').errors?.required" class="text-danger animated fadeIn ">Seleccionar un Cliente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-right ">
+                    <button type="submit" [disabled]="!this.forma.valid" class="btn btn-info mx-2" title="Search ">
+                                            <i class="fas fa-search fa-x1 "></i>
+                                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="col ">
+    <div class="form-group form-inline ">
+        <span class="ml-3 " *ngIf="cuestionarioListServ.loading$ | async ">Cargando resultados ......</span>
+    </div>
+    <div class="text-left">
+        <button class="btn btn-primary" [disabled]="CuestionarioSeleccion.length === 0" (click)="borrarCuestionario()">Borrar Cuestionarios</button>
+    </div>
+    <div>
+        <table class="table table-striped mt-3 animated fadeIn faster ">
+            <thead class="thead-dark ">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" sortable="cliente" (sort)="onSort($event)">Cliente</th>
+                    <th scope="col" sortable="fechaIni" (sort)="onSort($event)">Fecha Alta</th>
+                    <th scope="col" sortable="fechaFin" (sort)="onSort($event)">Fecha Baja</th>
+                    <th scope="col" sortable="cadena" (sort)="onSort($event)">Cadena</th>
+                    <th scope="col" sortable="ensena" (sort)="onSort($event)">Enseña</th>
+                    <th scope="col" sortable="publicado" (sort)="onSort($event)">Publicado</th>
+                    <th scope="col" sortable="numeroPreguntas" (sort)="onSort($event)">Numero Preguntas</th>
+                    <!--<th scope="col ">Acciones</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cuestionario$ | async ; let i=index ">
+                    <td>
+                        <input type="checkbox" [checked]="item.seleccionado" (change)="chekCuestSelection($event,item)">
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.cliente" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.fechaIni" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.fechaFin" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.cadena" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.ensena" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.publicado" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="item.numeroPreguntas" [term]="cuestionarioListServ.searchTerm "></ngb-highlight>
+                    </td>
+                    <!--<td>
+                        <button class="btn btn-info mr-1 ">
+                                <i class="fa fa-pen "></i>
+                            </button>
+                    </td>-->
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between p-2 ">
+            <!--
+                <ngb-pagination [collectionSize]="total$ | async " [(page)]="cuestionarioListServ.page " [pageSize]="cuestionarioListServ.pageSize ">
+            </ngb-pagination>
+            -->
+            <ngb-pagination [collectionSize]="total$ | async " [maxSize]="5 " [rotate]="true " [boundaryLinks]="true " [(page)]="cuestionarioListServ.page " [pageSize]="cuestionarioListServ.pageSize ">
+            </ngb-pagination>
+
+            <select class="custom-select " style="width: auto " name="pageSize " [(ngModel)]="cuestionarioListServ.pageSize ">
+              <option [ngValue]="20 ">20 items per page</option>
+              <option [ngValue]="50 ">50 items per page</option>
+              <option [ngValue]="100 ">100 items per page</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!--<app-custionariolistado *ngIf="!loading " [filtro]="this.forma.value "></app-custionariolistado>-->

@@ -1,0 +1,66 @@
+<h3> <i class="fas fa-fw fa-route fa-2x"></i><small> Duplicar Rutas</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Selecciones el destino de las rutas a duplicar</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="guardar()">
+                <div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('clientes').valid }">
+                                <ng-select style="color: black;" [allowClear]="true" [options]="duplicarRutas.clientes" (deselected)="deleteCliente($event)" (selected)="selectCliente($event)" placeholder="Seleccionar un Cliente" formControlName="clientes"></ng-select>
+                            </div>
+                            <div *ngIf="forma.get('clientes').errors?.required" class="text-danger animated fadeIn">Seleccionar un Cliente</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('vendedor').valid }">
+                                <ng-select style="color: black;" [allowClear]="true" [options]="duplicarRutas.vendedor" placeholder="Seleccionar un Enseña" formControlName="vendedor"></ng-select>
+                            </div>
+                            <div *ngIf="forma.get('vendedor').errors?.required" class="text-danger animated fadeIn">Seleccionar un Cliente</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="col">
+    <table class="table table-striped mt-3 animated fadeIn faster">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Vendedor</th>
+                <th scope="col">Provincia</th>
+                <th scope="col">Fecha Alta</th>
+                <th scope="col">Fecha Baja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ruta of rutaselection">
+                <td>
+                    <ngb-highlight [result]="ruta.cliente"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="ruta.vendedor"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="ruta.provincia"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="ruta.fechaAlta"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="ruta.fechaBaja"></ngb-highlight>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col">
+    <div class="text-right">
+        <button [disabled]="!this.forma.valid" class="btn btn-primary" (click)="guardar()">Duplicar</button>
+    </div>
+</div>

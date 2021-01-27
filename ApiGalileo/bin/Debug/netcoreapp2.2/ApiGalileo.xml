@@ -1,0 +1,619 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiGalileo</name>
+    </assembly>
+    <members>
+        <member name="T:ApiGalileo.Features.Admin.Controllers.AdminController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.#ctor(Business.Interfaces.IMaster,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvMaster"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetCanales">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetCadenas(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cdcanal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetEnsena(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cdCadena"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetEnsenaMultiple(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdCadena"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetProvincia">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetMunicipio(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdProvincia"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetSector">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetFamilia(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdsector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetCategoria(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdsector"></param>
+            <param name="cdfamilia"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetSegmento(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdsector"></param>
+            <param name="cdfamilia"></param>
+            <param name="cdcategorias"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetTiposRespuestas">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetCluster(System.String,System.String)">
+            <summary>
+            /
+            </summary>
+            <param name="cdcadena"></param>
+            <param name="cdensena"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetCliente">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetVendedor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idcliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Admin.Controllers.AdminController.GetTiendas(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cdcliente"></param>
+            <param name="cdvendedor"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ApiGalileo.Features.Base.CError.ErrorDetails">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CError.#ctor">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CError.#ctor(ApiGalileo.Features.Base.CErrorDet)">
+            
+        </member>
+        <member name="P:ApiGalileo.Features.Base.CErrorDet.Origen">
+            
+        </member>
+        <member name="P:ApiGalileo.Features.Base.CErrorDet.Error">
+            
+        </member>
+        <member name="P:ApiGalileo.Features.Base.CErrorDet.IdTransaction">
+            
+        </member>
+        <member name="P:ApiGalileo.Features.Base.CErrorDet.ModelInformation">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CErrorDet.#ctor">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CErrorDet.#ctor(System.Exception)">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CErrorDet.#ctor(System.String)">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CErrorDet.#ctor(System.String,System.Exception)">
+            
+        </member>
+        <member name="M:ApiGalileo.Features.Base.CErrorDet.#ctor(System.String,System.String)">
+            
+        </member>
+        <member name="T:ApiGalileo.Features.Cluster.Controllers.ClusterController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Cluster.Controllers.ClusterController.#ctor(Business.Interfaces.ICluster,ApiGalileo.Api.Log.ILog,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvCluster"></param>
+            <param name="log"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Cluster.Controllers.ClusterController.AsignarConfigTienda(ApiGalileo.Features.Cluster.DTO.AsignarConfigTienda_Dto)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Cuestionario.Controllers.CuestionarioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Cuestionario.Controllers.CuestionarioController.#ctor(Business.Interfaces.ICuestionario,ApiGalileo.Api.Log.ILog,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvCuestionario"></param>
+            <param name="log"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Cuestionario.Controllers.CuestionarioController.GetCuestionarios(System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="fechaIni"></param>
+            <param name="fechaFin"></param>
+            <param name="cdCliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Cuestionario.Controllers.CuestionarioController.BorrarCuestionarios(ApiGalileo.Features.Cuestionario.DTO.BorrarCuestionarioRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.oAuth.Controllers.oAuthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Controllers.oAuthController.#ctor(Business.Interfaces.IOauth,Business.Interfaces.ILogTransaction)">
+            <summary>
+            s
+            </summary>
+            <param name="srvOAuth"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Controllers.oAuthController.Login(ApiGalileo.Features.oAuth.DTO.UserLogin_Dto)">
+            <summary>
+            
+            </summary>
+            <param name="userInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Controllers.oAuthController.Refresh(ApiGalileo.Features.oAuth.DTO.RefreshToken_Dto)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Controllers.oAuthController.ResetPassword(ApiGalileo.Features.oAuth.DTO.ResetLogin)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.oAuth.Services.oAuthServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.Identity.ApplicationUser},Microsoft.AspNetCore.Identity.SignInManager{Domain.Identity.ApplicationUser},Microsoft.Extensions.Configuration.IConfiguration,Repository.Identity.interfaces.IIdentityUnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="userManager"></param>
+            <param name="signInManager"></param>
+            <param name="configuration"></param>
+            <param name="indentityOfWork"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.LoginAsync(ApiGalileo.Features.oAuth.DTO.UserLogin_Dto)">
+            <summary>
+            /
+            </summary>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.RefresAsync(ApiGalileo.Features.oAuth.DTO.RefreshToken_Dto)">
+            <summary>
+            
+            </summary>
+            <param name="refresToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.SaveTokenRefres(ApiGalileo.Features.oAuth.DTO.TokenResponse_Dto,System.String)">
+            <summary>
+            s
+            </summary>
+            <param name="token"></param>
+            <param name="idUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.CrearClaisUsuario(ApiGalileo.Features.oAuth.DTO.UserInfo_Dto)">
+            <summary>
+            
+            </summary>
+            <param name="userInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.GenerateToken(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            
+            </summary>
+            <param name="claims"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.GetInfoUserAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userlogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.GenerateRefreshToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.GetPrincipalFromExpiredToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.oAuth.Services.oAuthServices.GetRefreshToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="idUser"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Ruta.Controllers.RutasController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Controllers.RutasController.#ctor(Business.Interfaces.IRutas,ApiGalileo.Api.Log.ILog,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvRuta"></param>
+            <param name="log"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Controllers.RutasController.GetRutas(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="idcliente"></param>
+            <param name="idvendedor"></param>
+            <param name="rutasbaja"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Controllers.RutasController.DuplicarRutas(ApiGalileo.Features.Ruta.DTO.DuplicarRutaRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Controllers.RutasController.UpdateDescription(ApiGalileo.Features.Ruta.DTO.SetRutaRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Services.RutaServices.GetRutas(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="idcliente"></param>
+            <param name="idvendedor"></param>
+            <param name="rutasbaja"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Ruta.Services.RutaServices.DuplicarRutas(ApiGalileo.Features.Ruta.DTO.DuplicarRutaRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Surtido.Controllers.SurtidosController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Surtido.Controllers.SurtidosController.#ctor(Business.Interfaces.ISurtido,ApiGalileo.Api.Log.ILog,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvSurtido"></param>
+            <param name="log"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Surtido.Controllers.SurtidosController.GetSurtidos(ApiGalileo.Features.Surtido.DTO.ItemFilterSurtidoRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Surtido.Controllers.SurtidosController.DuplicarSurtidos(ApiGalileo.Features.Surtido.DTO.DuplicarSurtidosRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Surtido.Controllers.SurtidosController.BorrarSurtido(ApiGalileo.Features.Surtido.DTO.BorrarSurtidoRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Surtido.Controllers.SurtidosController.SurtidoMaxivo(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.AddUser(ApiGalileo.Features.User.DTO.UserAddRequest)">
+            <summary>
+            Añadir usuario a las tablas de indentity y las propieas de la base de datos 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.SetUser(ApiGalileo.Features.User.DTO.UserSetRequest)">
+            <summary>
+            Modificacion de un usuario.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.ExisteUsuario(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.CrearUserApp(ApiGalileo.Features.User.DTO.UserAddRequest)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.AssignUserRole(ApiGalileo.Features.Base.ResponseBase)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.CreateUserInfo(ApiGalileo.Features.User.DTO.UserAddRequest,ApiGalileo.Features.Base.ResponseBase)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.User.Services.UserServices.DeleteUser(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Visitas.Controllers.VisitaController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Controllers.VisitaController.#ctor(Business.Interfaces.IVisita,Business.Interfaces.ILogTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="srvVisita"></param>
+            <param name="srvLogTransaction"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Controllers.VisitaController.GetVisitas(System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idcliente"></param>
+            <param name="idvendedor"></param>
+            <param name="idtienda"></param>
+            <param name="fechadesde"></param>
+            <param name="fechahasta"></param>
+            <param name="surtido"></param>
+            <param name="tipoRespuesta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Controllers.VisitaController.GetVisitasRespuestas(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="visita"></param>
+            <param name="idtipo"></param>
+            <param name="cadena"></param>
+            <param name="surtido"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Controllers.VisitaController.SetVisitaRespuesta(ApiGalileo.Features.Visitas.DTO.RespuestaSetRequest)">
+            <summary>
+            Modificar la respuesta
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Visitas.DTO.RespuestaSetRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiGalileo.Features.Visitas.DTO.RespuestaSetRequest.Respuesta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiGalileo.Features.Visitas.DTO.RespuestaSetRequest.ValueName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ApiGalileo.Features.Visitas.DTO.RespuestaSetRequest.rowGuidVisita">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ApiGalileo.Features.Visitas.DTO.ItemRespuestaRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Services.VisitasServices.#ctor(ApiGalileo.Api.Log.ILog,Repository.Metafase.interfaces.IMetafaseStoreProcedureRepository)">
+            <summary>
+            
+            </summary>
+            <param name="log"></param>
+            <param name="metafaseStoreProcedureRepors"></param>
+        </member>
+        <member name="M:ApiGalileo.Features.Visitas.Services.VisitasServices.GetVisitas(ApiGalileo.Features.Visitas.DTO.VistasFilterRequest)">
+            <summary>
+            
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiGalileo.Features.Visitas.Services.MapperVisitas">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ApiGalileo.IoC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.IoC.RegisterSRServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:ApiGalileo.Api.Log.GalileoLog">
+            <summary>
+            Clase para almacenar los diferentes mensajes en funcion de su criticidad
+            </summary>
+        </member>
+        <member name="T:ApiGalileo.Api.Log.ILog">
+            <summary>
+            Interface para los mensajes de error
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Api.Log.ILog.Information(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ApiGalileo.Api.Log.ILog.Warning(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ApiGalileo.Api.Log.ILog.Debug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ApiGalileo.Api.Log.ILog.Error(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ApiGalileo.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiGalileo.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="M:ApiGalileo.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ApiGalileo.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

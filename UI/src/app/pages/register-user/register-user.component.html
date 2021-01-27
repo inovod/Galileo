@@ -1,0 +1,68 @@
+<h3> <i class="far fa-user fa-2x"></i><small> Nuevo Usuario</small></h3>
+<hr>
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <!-- Default form register -->
+        <form [formGroup]="forma" (ngSubmit)="guardar()" class="p-5">
+            <div>
+                <div class="form-row mb-4">
+                    <!--[ngClass]="{'has-danger': !forma.get('nombre').valid }" -->
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('nombre').valid }">
+                        <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+                        <div *ngIf="forma.get('nombre').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('nombre').errors?.minlength" class="text-danger animated fadeIn">Por lo menos 4 caracteres.</div>
+                    </div>
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('apellidos').valid }">
+                        <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+                        <div *ngIf="forma.get('apellidos').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('apellidos').errors?.minlength" class="text-danger animated fadeIn">Por lo menos 4 caracteres.</div>
+                    </div>
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('email').valid }">
+                        <input type="text" class="form-control" placeholder="E-mail" formControlName="email">
+                        <div *ngIf="forma.get('email').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('email').errors?.pattern" class="text-danger animated fadeIn">Formato incorrecto.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col" [ngClass]="{'has-danger': !forma.get('login').valid }">
+                    <input type="text" class="form-control" placeholder="Login" formControlName="login">
+                    <div *ngIf="forma.get('login').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                    <div *ngIf="forma.get('login').errors?.minlength" class="text-danger animated fadeIn">Por lo menos 6 caracteres.</div>
+                </div>
+                <div class="col" [ngClass]="{'has-danger': !forma.get('password').valid }">
+                    <!-- Last name -->
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                    <div *ngIf="forma.get('password').errors?.RequiresTooShort" class="text-danger animated fadeIn">Al menos 6 caracteres</div>
+                    <div *ngIf="forma.get('password').errors?.RequiresNonAlphanumeric" class="text-danger animated fadeIn">Las contraseñas deben tener al menos un carácter no alfanumérico. </div>
+                    <div *ngIf="forma.get('password').errors?.RequiresRequiresDigit" class="text-danger animated fadeIn">Las contraseñas deben tener al menos un dígito ('0'-'9')</div>
+
+                </div>
+                <div class="col" [ngClass]="{'has-danger': !forma.get('password2').valid }">
+                    <input type="password" class="form-control" placeholder="Confirmar contraseña" formControlName="password2">
+                    <div *ngIf="forma.get('password2').errors?.required" class="text-danger animated fadeIn">Al menos 6 caracteres</div>
+                    <div *ngIf="forma.get('password2').errors?.noiguales" class="text-danger animated fadeIn">Las contraseñas no son iguales</div>
+                    <!--<small class="form-text text-muted mb-4">At least 8 characters and 1 digit</small>-->
+                </div>
+            </div>
+
+
+            <div class="text-right">
+                <button type="button" class="btn btn-info mx-2" title="Listado Usuarios">
+                    <i class="fas fa-users fa-x1"></i>
+                </button>
+                <button type="submit" class="btn btn-info mx-2" title="Guardar">
+                    <i class="fas fa-save fa-x1"></i>
+                </button>
+
+                <button type="submit" class="btn btn-info mx-2" title="Cancelar">
+                        <i class="fas fa-window-close fa-x1"></i>
+                </button>
+
+            </div>
+            {{forma.valid}}
+        </form>
+        <!-- Default form register -->
+    </div>
+</div>

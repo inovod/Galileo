@@ -1,0 +1,142 @@
+<h3> <i class="fas fa-fw  fa-file-signature fa-2x"></i><small> Visitas</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger">
+        <div class="card-header">Filtros Visitas</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="search()">
+                <div>
+                    <div class="form-row mb-4">
+
+                        <div class="col">
+                            <!--<div class="input-group"> -->
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('clientes').valid }">
+                                <ng-select [multiple]="false" style="color: black;" formControlName="clientes" [allowClear]="true " [options]="filterVisitas.clientes " placeholder="Seleccionar un cliente ">
+                                </ng-select>
+                            </div>
+                            <!-- </div> -->
+                            <div *ngIf="forma.get('clientes').errors?.required" class="text-danger animated fadeIn ">Seleccionar un Cliente</div>
+                        </div>
+                        <div class="col">
+                            <!-- <div class="input-group"> -->
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('vendedor').valid }">
+                                <ng-select [multiple]="true" style="color: black;" formControlName="vendedor" [allowClear]="true " [options]="filterVisitas.vendedor" placeholder="Seleccionar un vendedor">
+                                </ng-select>
+                            </div>
+                            <!-- </div> -->
+                            <div *ngIf="forma.get('vendedor').errors?.required" class="text-danger animated fadeIn ">Seleccionar un Vendedor</div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-ngselect': !forma.get('tienda').valid }">
+                                    <ng-select [multiple]="true" style="color: black;" formControlName="tienda" [allowClear]="true " [options]="filterVisitas.tienda" placeholder="Seleccionar una tienda">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div *ngIf="forma.get('tienda').errors?.required" class="text-danger animated fadeIn ">Seleccionar una Tienda</div>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fDesde').valid }">
+                                    <input class="form-control" formControlName="fDesde" placeholder="dd-mm-yyyy" ngbDatepicker #fd="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fd.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div  class="text-info animated fadeIn">Seleccionar fecha desde</div>
+                        </div>
+                        <div class="col" >
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fhasta').valid }">
+                                    <input class="form-control" formControlName="fhasta" placeholder="dd-mm-yyyy" ngbDatepicker #fh="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fh.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div  class="text-info animated fadeIn">Seleccionar fecha hasta</div>
+                        </div>
+                        <div class="col" style="visibility: hidden;">
+                          <p>Cadena</p>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col text-right">
+                    <button type="submit" [disabled]="!this.forma.valid" class="btn btn-info mx-2" title="Search">
+                                        <i class="fas fa-search fa-x1"></i> Buscar
+                                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="col">
+    <div class="form-group form-inline">
+        <!--<span class="ml-3" *ngIf="visitaListadoServ.loading$ | async">Cargando resultados ......</span>-->
+        <span class="ml-3" *ngIf="this.loading">Cargando resultados ......</span>
+    </div>
+    <div>
+        <table class="table table-striped mt-3 animated fadeIn faster">
+            <thead class="table-dark">
+                <tr>
+                    <!-- <th scope="col">#</th>-->
+                    <th scope="col" sortable="fechaPlanificada" (sort)="onSort($event)">F.Planificada</th>
+                    <th scope="col" sortable="fechaVisita" (sort)="onSort($event)">F.Visita</th>
+                    <th scope="col" sortable="horaInicio" (sort)="onSort($event)">Hora Inicio</th>
+                    <th scope="col" sortable="horaFin" (sort)="onSort($event)">Hora Fin</th>
+                    <th scope="col" sortable="clienteDs" (sort)="onSort($event)">Cliente</th>
+                    <th scope="col" sortable="vendedor" (sort)="onSort($event)">Vendedor</th>
+                    <th scope="col" sortable="codigodetienda" (sort)="onSort($event)">Codigo Tienda</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let visita of visitas$ | async ; let i = index">
+                    <td>
+                        <ngb-highlight [result]="visita.fechaPlanificada" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.fechaVisita" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.horaInicio" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.horaFin" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.clienteDs" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.vendedor" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="visita.codigodetienda" [term]="visitaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <button class="btn btn-info mr-1" (click)="editRespuestas(visita)">
+                            <i class="fa fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="total$ | async" [(page)]="visitaListadoServ.page" [pageSize]="visitaListadoServ.pageSize">
+            </ngb-pagination>
+
+
+            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="visitaListadoServ.pageSize">
+                              <option [ngValue]="10" selected>10</option>
+                              <option [ngValue]="50">50</option>
+                              <option [ngValue]="100">100</option>
+                            </select>
+        </div>
+    </div>
+</div>

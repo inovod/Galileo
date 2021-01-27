@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="10001_SROauth_Login_Incorrecto" xml:space="preserve">
+    <value>Login Incorrecto</value>
+  </data>
+  <data name="10002_SROauth_Usuario_Bloqueado" xml:space="preserve">
+    <value>Usuario Bloqueado</value>
+  </data>
+  <data name="10003_SROauth_Error_Generio" xml:space="preserve">
+    <value>SROauth</value>
+  </data>
+  <data name="10004_SROauth_Info_User" xml:space="preserve">
+    <value>GetInfoUserAsync </value>
+  </data>
+  <data name="10005_SROauth_Clais" xml:space="preserve">
+    <value>CrearClaisUsuario</value>
+  </data>
+  <data name="10006_SROauth_GeneraToken" xml:space="preserve">
+    <value>GenerateToken</value>
+  </data>
+  <data name="10007_SROauth_GenerateRefreshToken" xml:space="preserve">
+    <value>GenerateRefreshToken</value>
+  </data>
+  <data name="10008_SROauth_SaveToken" xml:space="preserve">
+    <value>SaveTokenRefres</value>
+  </data>
+  <data name="10009_SROauth_RefresToken" xml:space="preserve">
+    <value>RefresAsync</value>
+  </data>
+  <data name="10010_SROauth_Refresh_Token_Invalido" xml:space="preserve">
+    <value>Token de actualización no válido</value>
+  </data>
+  <data name="10011_SROauth_Token_Valido" xml:space="preserve">
+    <value>Token Invalido</value>
+  </data>
+  <data name="10012_SROauth_GetPrincipalFromExpiredToken" xml:space="preserve">
+    <value>GetPrincipalFromExpiredToken</value>
+  </data>
+  <data name="10013_SROauth_IsBloquedUser" xml:space="preserve">
+    <value>IsBloquedUser</value>
+  </data>
+  <data name="10014_SROauth_GetRefreshToken" xml:space="preserve">
+    <value>GetRefreshToken</value>
+  </data>
+  <data name="10015_SROauth_ResetPassword" xml:space="preserve">
+    <value>ResetPassword</value>
+  </data>
+  <data name="10016_SROauth_ModifyAccessData" xml:space="preserve">
+    <value>ModifyAccessData</value>
+  </data>
+  <data name="10017_SROauth_Usuario_NotFound" xml:space="preserve">
+    <value>Usuario no encontrado</value>
+  </data>
+  <data name="10018_SRVisitas_Get" xml:space="preserve">
+    <value>Error en servicio SRVisita metodo Get</value>
+  </data>
+  <data name="10019_SRVisitas_Mapper_Get" xml:space="preserve">
+    <value>Error en el mapeo de los filtros del metodo get</value>
+  </data>
+  <data name="10020_SRVisitas_Mapper_Get_Retorno" xml:space="preserve">
+    <value>Error en el mapeo de los datos devuelvos de la consulta</value>
+  </data>
+  <data name="10021_SRBase_AddLogTransaction" xml:space="preserve">
+    <value>AddLogTransaction</value>
+  </data>
+  <data name="10022_SRBase_InitOperation" xml:space="preserve">
+    <value>InitOperation</value>
+  </data>
+  <data name="10023_SRMaster_GetCadena" xml:space="preserve">
+    <value>GetCadena</value>
+  </data>
+  <data name="10024_SRMaster_Generico" xml:space="preserve">
+    <value>Error generico Master</value>
+  </data>
+  <data name="10025_SRMaster_CadenaVacia" xml:space="preserve">
+    <value>La cadena no esta informada</value>
+  </data>
+  <data name="10025_SRMaster_Canales" xml:space="preserve">
+    <value>GetCanales</value>
+  </data>
+  <data name="10026_SRMaster_Categorias_CdFamilia" xml:space="preserve">
+    <value>El codigo de familia no esta informada</value>
+  </data>
+  <data name="10027_SRMaster_Categorias_CdSector" xml:space="preserve">
+    <value>El codigo de sector no esta informado</value>
+  </data>
+  <data name="10028_SRMaster_Categorias" xml:space="preserve">
+    <value>GetCategorias</value>
+  </data>
+  <data name="10029_SRMaster_Cluster_CdEnsena" xml:space="preserve">
+    <value>El codigo de Ensena no esta informado</value>
+  </data>
+  <data name="10030_SRMaster_Cluster_CdCadena" xml:space="preserve">
+    <value>La cadena no esta informada</value>
+  </data>
+  <data name="10031_SRMaster_Cluster" xml:space="preserve">
+    <value>GetCluster</value>
+  </data>
+  <data name="10032_SRMaster_Ensena" xml:space="preserve">
+    <value>GetEnsena</value>
+  </data>
+  <data name="10033_SRMaster_Ensena_CdCandena" xml:space="preserve">
+    <value>La cadena no esta informada</value>
+  </data>
+  <data name="10034_SRMaster_EnsenaMultiple" xml:space="preserve">
+    <value>GetEnsenaMultiple</value>
+  </data>
+  <data name="10035_SRMaster_EnsenaMultiple_CdCadena" xml:space="preserve">
+    <value>La cadena no esta informada</value>
+  </data>
+  <data name="10036_SRMaster_Familia" xml:space="preserve">
+    <value>GetFamilia</value>
+  </data>
+  <data name="10037_SRMaster_Familia_CdSector" xml:space="preserve">
+    <value>El sector no esta informado</value>
+  </data>
+  <data name="10038_SRMaster_Municipio" xml:space="preserve">
+    <value>GetMunicipio</value>
+  </data>
+  <data name="10039_SRMaster_Municipio_CdProvincia" xml:space="preserve">
+    <value>La provincia es obligatoria</value>
+  </data>
+  <data name="10040_SRMaster_Provincia" xml:space="preserve">
+    <value>GetProvincia</value>
+  </data>
+  <data name="10041_SRMaster_Sector" xml:space="preserve">
+    <value>GetSector</value>
+  </data>
+  <data name="10042_SRMaster_Clientes" xml:space="preserve">
+    <value>GetClientes</value>
+  </data>
+  <data name="10043_SRMaster_Vendedores" xml:space="preserve">
+    <value>GetVendedores</value>
+  </data>
+  <data name="10044_SRMaster_Vendedores_IdCliente" xml:space="preserve">
+    <value>El cliente es obligatorio</value>
+  </data>
+  <data name="10045_SRMaster_Tiendas" xml:space="preserve">
+    <value>GetTiendas</value>
+  </data>
+  <data name="10046_SRMaster_Tiendas_CdCliente" xml:space="preserve">
+    <value>El codigo del cliente es obligatorio</value>
+  </data>
+  <data name="10047_SRMaster_Tiendas_CdVendedor" xml:space="preserve">
+    <value>El codigo del vendedor es obligatorio</value>
+  </data>
+  <data name="10048_SRMaster_Segmentos" xml:space="preserve">
+    <value>GetSegmentos</value>
+  </data>
+  <data name="10049_SRMaster_Segmentos_cdsector" xml:space="preserve">
+    <value>El codigo de sector es obligatorio</value>
+  </data>
+  <data name="10050_SRMaster_Segmentos_cdfamilia" xml:space="preserve">
+    <value>El codigo de familia es obligatorio</value>
+  </data>
+  <data name="10051_SRMaster_Segmentos_cdcategorias" xml:space="preserve">
+    <value>El codigo de la categoria es obligatorio</value>
+  </data>
+  <data name="10052_SRCluster_AsignarConfiguracionTienda" xml:space="preserve">
+    <value>AsignarConfiguracionTienda</value>
+  </data>
+  <data name="10053_SRCluster_Generico" xml:space="preserve">
+    <value>SRCluster</value>
+  </data>
+  <data name="10054_SRCuestionario_Generico" xml:space="preserve">
+    <value>SRCuestionario</value>
+  </data>
+  <data name="10055_SRCuestionario_BorrarCuestionario" xml:space="preserve">
+    <value>BorrarCuestionario</value>
+  </data>
+  <data name="10056_SRCuestionario_GetCuestionarios" xml:space="preserve">
+    <value>GetCuestionario</value>
+  </data>
+  <data name="10057_SRRutas_Generico" xml:space="preserve">
+    <value>SRRutas</value>
+  </data>
+  <data name="10058_SRRutas_GetRutas" xml:space="preserve">
+    <value>GetRutas</value>
+  </data>
+  <data name="10059_SRRutas_DuplicarRutas" xml:space="preserve">
+    <value>DuplicarRutas</value>
+  </data>
+  <data name="10060_SRRutas_ModificarRutas" xml:space="preserve">
+    <value>ModificarRutas</value>
+  </data>
+  <data name="10061_SRSurtido_Generico" xml:space="preserve">
+    <value>SRSurtido</value>
+  </data>
+  <data name="10062_SRSurtido_GetSurtido" xml:space="preserve">
+    <value>GetSurtido</value>
+  </data>
+  <data name="10063_SRSurtido_DuplicarSurtidos" xml:space="preserve">
+    <value>DuplicarSurtidos</value>
+  </data>
+  <data name="10064_SRSurtido_BajaSurtido" xml:space="preserve">
+    <value>BajaSurtido</value>
+  </data>
+  <data name="10065_SRSurtido_Longitud_Fichero" xml:space="preserve">
+    <value>Surtido Maximo no encontrado</value>
+  </data>
+  <data name="10066_SRSurtido_SurtidoMaxivo" xml:space="preserve">
+    <value>SurtidoMaxivo</value>
+  </data>
+  <data name="10067_SRVisita_GetVisitasRespuesta" xml:space="preserve">
+    <value>Error en servicio SRVisita metodo GetVisitasRespuesta</value>
+  </data>
+  <data name="10068_SRMaster_TiposRespuestas" xml:space="preserve">
+    <value>GetTipoPregutasRespuestas</value>
+  </data>
+  <data name="10068_SRVisita_SetVisitaRespuesta" xml:space="preserve">
+    <value>SetVisitaRespuesta</value>
+  </data>
+</root>

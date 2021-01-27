@@ -1,0 +1,45 @@
+<h3> <i class="far fa-user fa-2x"></i><small> Editar Usuario</small></h3>
+<hr>
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <!-- Default form register -->
+        <form [formGroup]="forma" (ngSubmit)="guardar()" class="p-5">
+            <div>
+                <div class="form-row mb-4">
+                    <!--[ngClass]="{'has-danger': !forma.get('nombre').valid }" -->
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('nombre').valid }">
+                        <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+                        <div *ngIf="forma.get('nombre').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('nombre').errors?.minlength" class="text-danger animated fadeIn">Por lo menos 4 caracteres.</div>
+                    </div>
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('apellidos').valid }">
+                        <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+                        <div *ngIf="forma.get('apellidos').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('apellidos').errors?.minlength" class="text-danger animated fadeIn">Por lo menos 4 caracteres.</div>
+                    </div>
+                    <div class="col" [ngClass]="{'has-danger': !forma.get('email').valid }">
+                        <input type="text" class="form-control" placeholder="E-mail" formControlName="email">
+                        <div *ngIf="forma.get('email').errors?.required" class="text-danger animated fadeIn">Campo obligatorio.</div>
+                        <div *ngIf="forma.get('email').errors?.pattern" class="text-danger animated fadeIn">Formato incorrecto.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-info mx-2" title="Listado Usuarios">
+                        <i class="fas fa-users fa-x1"></i>
+                    </button>
+                <button type="submit" class="btn btn-info mx-2" title="Guardar">
+                        <i class="fas fa-save fa-x1"></i>
+                    </button>
+
+                <button type="submit" class="btn btn-info mx-2" title="Cancelar">
+                            <i class="fas fa-window-close fa-x1"></i>
+                    </button>
+
+            </div>
+            {{forma.valid}}
+        </form>
+
+        <!-- Default form register -->
+    </div>
+</div>

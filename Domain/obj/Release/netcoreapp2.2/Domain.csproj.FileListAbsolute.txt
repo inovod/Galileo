@@ -1,0 +1,12 @@
+C:\Proyectos\Galileo\Domain\bin\Release\netcoreapp2.2\Domain.deps.json
+C:\Proyectos\Galileo\Domain\bin\Release\netcoreapp2.2\Domain.runtimeconfig.json
+C:\Proyectos\Galileo\Domain\bin\Release\netcoreapp2.2\Domain.runtimeconfig.dev.json
+C:\Proyectos\Galileo\Domain\bin\Release\netcoreapp2.2\Domain.dll
+C:\Proyectos\Galileo\Domain\bin\Release\netcoreapp2.2\Domain.pdb
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.csprojAssemblyReference.cache
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.AssemblyInfoInputs.cache
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.AssemblyInfo.cs
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.csproj.CoreCompileInputs.cache
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.dll
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.pdb
+C:\Proyectos\Galileo\Domain\obj\Release\netcoreapp2.2\Domain.genruntimeconfig.cache

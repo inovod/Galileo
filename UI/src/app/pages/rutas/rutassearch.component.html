@@ -1,0 +1,110 @@
+<h3> <i class="fas fa-fw fa-route fa-2x"></i><small> Rutas</small></h3>
+<hr>
+
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Filtros Rutas</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="search()">
+                <div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('clientes').valid }">
+                                <ng-select style="color: black;" formControlName="clientes" (deselected)="deleteCliente($event)" (selected)="selectCliente($event)" [allowClear]="true" [options]="filterRutas.clientes" placeholder="Seleccionar un cliente">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('clientes').errors?.required" class="text-danger animated fadeIn">Seleccionar un Cliente</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('vendedor').valid }">
+                                <ng-select style="color: black;" formControlName="vendedor" [allowClear]="true" [options]="filterRutas.vendedor" placeholder="Seleccionar un vendedor">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('vendedor').errors?.required" class="text-danger animated fadeIn">Seleccionar un Cliente</div>
+                        </div>
+                        <div class="col">
+                            <div class="custom-control custom-checkbox">
+                                <input formControlName="rutasBaja" type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" style="color: black;" for="customCheck1">Rutas de baja</label>
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <button type="submit" [disabled]="!this.forma.valid" class="btn btn-info mx-2" title="Search">
+                                        <i class="fas fa-search fa-x1"></i> Buscar
+                                    </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="col">
+    <div class="form-group form-inline">
+        <span class="ml-3" *ngIf="rutaListadoServ.loading$ | async">Cargando resultados ......</span>
+    </div>
+    <div class="text-left">
+        <button class="btn btn-primary" [disabled]="rutasSeleccion.length === 0" (click)="duplicarRutas()">Duplicar rutas</button>
+    </div>
+    <div>
+        <table class="table table-striped mt-3 animated fadeIn faster">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" sortable="cliente" (sort)="onSort($event)">Cliente</th>
+                    <th scope="col" sortable="vendedor" (sort)="onSort($event)">Vendedor</th>
+                    <th scope="col" sortable="ruta" (sort)="onSort($event)">Ruta</th>
+                    <th scope="col" sortable="provincia" (sort)="onSort($event)">Provincia</th>
+                    <th scope="col" sortable="fechaAlta" (sort)="onSort($event)">Fecha Alta</th>
+                    <th scope="col" sortable="fechaBaja" (sort)="onSort($event)">Fecha Baja</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ruta of rutas$ | async ; let i = index">
+                    <td>
+                        <input type="checkbox" [checked]="ruta.selecionado" (change)="chekRutaSelection($event,ruta)">
+                        <!--<input type="checkbox">-->
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.cliente" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.vendedor" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.ruta" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.provincia" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.fechaAlta" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ruta.fechaBaja" [term]="rutaListadoServ.searchTerm"></ngb-highlight>
+                    </td>
+                    <td>
+                        <button class="btn btn-info mr-1" (click)="editDescription(ruta)">
+                            <i class="fa fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="total$ | async" [(page)]="rutaListadoServ.page" [pageSize]="rutaListadoServ.pageSize">
+            </ngb-pagination>
+
+
+            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="rutaListadoServ.pageSize">
+                              <option [ngValue]="10" selected>10</option>
+                              <option [ngValue]="50">50</option>
+                              <option [ngValue]="100">100</option>
+                            </select>
+        </div>
+    </div>
+</div>

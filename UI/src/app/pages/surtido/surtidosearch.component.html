@@ -1,0 +1,140 @@
+<h3> <i class="fas fa-fw fas fa-gas-pump fa-2x"></i><small> Surtidos</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Filtros Surtidos</div>
+        <div class="card-body" style="background-color: white;">
+            <form [formGroup]="forma" (ngSubmit)="search()">
+                <div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fDesde').valid }">
+                                    <input class="form-control" formControlName="fDesde" placeholder="dd-mm-yyyy" ngbDatepicker #fd="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fd.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div *ngIf="forma.get('fDesde').errors?.required" class="text-danger animated fadeIn">Seleccionar fecha desde</div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <div [ngClass]="{'has-danger-datapiker': !forma.get('fhasta').valid }">
+                                    <input class="form-control" formControlName="fhasta" placeholder="dd-mm-yyyy" ngbDatepicker #fh="ngbDatepicker">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="fh.toggle()" type="button"></button>
+                                </div>
+                            </div>
+                            <div *ngIf="forma.get('fhasta').errors?.required" class="text-danger animated fadeIn">Seleccionar fecha hasta</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('clientes').valid }">
+                                <ng-select style="color: black;" formControlName="clientes" [allowClear]="true " [options]="filterSurtidos.clientes" placeholder="Seleccionar un cliente">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('clientes').errors?.required" class="text-danger animated fadeIn ">Seleccionar un Cliente</div>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('canal').valid }">
+                                <ng-select style="color: black;" formControlName="canal" [allowClear]="true " [options]="filterSurtidos.canal" placeholder="Seleccionar un canal">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('canal').errors?.required" class="text-danger animated fadeIn ">Seleccionar un canal</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('cadena').valid }">
+                                <ng-select style="color: black;" formControlName="cadena" [allowClear]="true " [options]="filterSurtidos.cadena" placeholder="Seleccionar una cadena">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('cadena').errors?.required" class="text-danger animated fadeIn ">Seleccionar un Cadena</div>
+                        </div>
+                        <div class="col">
+                            <div [ngClass]="{'has-danger-ngselect': !forma.get('ensena').valid }">
+                                <ng-select [multiple]="true" style="color: black;" formControlName="ensena" [allowClear]="true " [options]="filterSurtidos.ensena" placeholder="Seleccionar una Enseña">
+                                </ng-select>
+                            </div>
+                            <div *ngIf="forma.get('ensena').errors?.required" class="text-danger animated fadeIn ">Seleccionar una Enseña</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right ">
+                    <button type="submit" [disabled]="!this.forma.valid" class="btn btn-info mx-2" title="Search">
+                                                <i class="fas fa-search fa-x1 "></i>
+                                            </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col ">
+        <div class="form-group form-inline ">
+            <span class="ml-3 " *ngIf="surtidoList.loading$ | async ">Cargando resultados ......</span>
+        </div>
+        <div class="text-left">
+            <button class="btn btn-primary" [disabled]="suritdoSeleccion.length === 0" (click)="borrarSurtido()">Baja Surtidos</button>
+        </div>
+        <div>
+            <table class="table table-striped mt-3 animated fadeIn faster ">
+                <thead class="thead-dark ">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" sortable="cliente" (sort)="onSort($event)">Cliente</th>
+                        <th scope="col" sortable="cadena" (sort)="onSort($event)">Cadena</th>
+                        <th scope="col" sortable="ensena" (sort)="onSort($event)">Enseña</th>
+                        <th scope="col" sortable="fechaAlta" (sort)="onSort($event)">Fecha Alta</th>
+                        <th scope="col" sortable="fechaBaja" (sort)="onSort($event)">Fecha Baja</th>
+                        <th scope="col" sortable="publicado" (sort)="onSort($event)">Publicado</th>
+                        <th scope="col" sortable="numeroReferencias" (sort)="onSort($event)">Numero Referencias</th>
+                        <th scope="col ">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of surtidos$ | async ; let i=index ">
+                        <td>
+                            <input type="checkbox" [checked]="item.selecionado" (change)="chekSurtidoSelection($event,item)">
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.cliente" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.cadena" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.ensena" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.fechaAlta" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.fechaBaja" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.publicado" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="item.numeroReferencias" [term]="surtidoList.searchTerm "></ngb-highlight>
+                        </td>
+                        <td>
+                            <button class="btn btn-info mr-1" (click)="duplicarSurtido(item)">
+                                <i class="fa fa-pen"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between p-2 ">
+                <ngb-pagination [collectionSize]="total$ | async " [maxSize]="5 " [rotate]="true " [boundaryLinks]="true " [(page)]="surtidoList.page " [pageSize]="surtidoList.pageSize ">
+                </ngb-pagination>
+
+                <select class="custom-select " style="width: auto " name="pageSize " [(ngModel)]="surtidoList.pageSize ">
+                      <option [ngValue]="20 ">20 items per page</option>
+                      <option [ngValue]="50 ">50 items per page</option>
+                      <option [ngValue]="100 ">100 items per page</option>
+                    </select>
+            </div>
+        </div>
+    </div>
+</div>

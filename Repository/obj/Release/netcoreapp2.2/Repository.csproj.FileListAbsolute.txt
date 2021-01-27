@@ -1,0 +1,12 @@
+C:\Proyectos\Galileo\Repository\bin\Release\netcoreapp2.2\Repository.deps.json
+C:\Proyectos\Galileo\Repository\bin\Release\netcoreapp2.2\Repository.dll
+C:\Proyectos\Galileo\Repository\bin\Release\netcoreapp2.2\Repository.pdb
+C:\Proyectos\Galileo\Repository\bin\Release\netcoreapp2.2\Domain.dll
+C:\Proyectos\Galileo\Repository\bin\Release\netcoreapp2.2\Domain.pdb
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.csprojAssemblyReference.cache
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.AssemblyInfoInputs.cache
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.AssemblyInfo.cs
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.csproj.CoreCompileInputs.cache
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.csproj.CopyComplete
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.dll
+C:\Proyectos\Galileo\Repository\obj\Release\netcoreapp2.2\Repository.pdb

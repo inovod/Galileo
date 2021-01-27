@@ -1,0 +1,76 @@
+<h3> <i class="fas fa-fw fas fa-gas-pump fa-2x"></i><small> Surtido Maxivo</small></h3>
+<hr>
+<div class="col">
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Importación surtido </div>
+        <div class="card-body" style="background-color: white;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div [archivos]="archivos" appNgDropfiles (mouseSobre)="estaSobreElemento = $event" [ngClass]="{'file-over': estaSobreElemento}" class="well drop-zone">
+                        <div>
+                            <h4 style="color: black;">Arrastre el fichero</h4>
+                            <hr>
+
+                        </div>
+                        <div style="text-align: center;color: black;">
+                            <i class="fas fa-file-excel fa-8x"></i>
+                            <!--<img src="../../../../assets/images/drop-images.png">-->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+                    <h4 style="color: black;">Fichero Cargado</h4>
+                    <hr>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Nombre de archivo</th>
+                                <th>Tamaño</th>
+                                <th>Progreso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let archivo of archivos">
+                                <td>{{archivo.nombreArchivo}}</td>
+                                <td>
+                                    {{archivo.archivo.size / 1024 /1024 | number: '.2-2'}} MB
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" [ngStyle]="{'width': archivo.progreso + '%'}"></div>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right">
+                        <button (click)="cargarImagenes()" [disabled]="archivos.length === 0" class="btn btn-success">Cargar a FireBase</button>
+                        <button (click)="limpiarArchivos()" class="btn btn-danger">Limpiar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <table class="table table-striped mt-3 animated fadeIn faster">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Cadena</th>
+                <th scope="col">Enseña</th>
+                <th scope="col">Fecha Alta</th>
+                <th scope="col">Fecha Baja</th>
+                <th scope="col">N.Referencia</th>
+                <th scope="col">Publicado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+</div>

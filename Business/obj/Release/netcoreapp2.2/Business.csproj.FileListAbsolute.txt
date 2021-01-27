@@ -1,0 +1,16 @@
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Business.deps.json
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Business.dll
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Business.pdb
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Domain.dll
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Repository.dll
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Domain.pdb
+C:\Proyectos\Galileo\Business\bin\Release\netcoreapp2.2\Repository.pdb
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.csprojAssemblyReference.cache
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.Errores.resources
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.csproj.GenerateResource.cache
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.AssemblyInfoInputs.cache
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.AssemblyInfo.cs
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.csproj.CoreCompileInputs.cache
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.csproj.CopyComplete
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.dll
+C:\Proyectos\Galileo\Business\obj\Release\netcoreapp2.2\Business.pdb
