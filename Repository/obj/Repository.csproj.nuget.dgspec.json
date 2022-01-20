@@ -1,23 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Proyectos\\Galileo\\Repository\\Repository.csproj": {}
+    "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Proyectos\\Galileo\\Domain\\Domain.csproj": {
+    "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos\\Galileo\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Proyectos\\Galileo\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\ignacioNovoDuran\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos\\Galileo\\Domain\\obj\\",
+        "projectPath": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\NACHO\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ignacioNovoDuran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NACHO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -83,29 +86,27 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Proyectos\\Galileo\\Repository\\Repository.csproj": {
+    "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos\\Galileo\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Proyectos\\Galileo\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\ignacioNovoDuran\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos\\Galileo\\Repository\\obj\\",
+        "projectPath": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\NACHO\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ignacioNovoDuran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NACHO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -120,8 +121,8 @@
           "netcoreapp2.2": {
             "targetAlias": "netcoreapp2.2",
             "projectReferences": {
-              "C:\\Proyectos\\Galileo\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Proyectos\\Galileo\\Domain\\Domain.csproj"
+              "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\proyectos\\Bedasoft\\Galileo\\Galileo\\Domain\\Domain.csproj"
               }
             }
           }
@@ -157,12 +158,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,3 +10,16 @@ C:\Proyectos\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CoreCo
 C:\Proyectos\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete
 C:\Proyectos\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.dll
 C:\Proyectos\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.pdb
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\bin\Debug\netcoreapp2.2\Repository.deps.json
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\bin\Debug\netcoreapp2.2\Repository.dll
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\bin\Debug\netcoreapp2.2\Repository.pdb
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\bin\Debug\netcoreapp2.2\Domain.dll
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\bin\Debug\netcoreapp2.2\Domain.pdb
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.AssemblyReference.cache
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfoInputs.cache
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfo.cs
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CoreCompileInputs.cache
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.dll
+C:\proyectos\Bedasoft\Galileo\Galileo\Repository\obj\Debug\netcoreapp2.2\Repository.pdb
